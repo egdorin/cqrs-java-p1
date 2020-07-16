@@ -7,7 +7,7 @@ import java.lang.reflect.InvocationTargetException;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestHelper {
-    private static <T extends Throwable> void assertAggregateThrowsException(Class<T> expectedType, Executable executable) {
+    public static <T extends Throwable> void assertAggregateThrowsException(Class<T> expectedType, Executable executable) {
         try {
             executable.execute();
             fail("Aggregate should throw " + expectedType.getCanonicalName() + " but didn't");
